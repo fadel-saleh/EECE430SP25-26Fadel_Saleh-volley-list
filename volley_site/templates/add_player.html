@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add Player</title></head>
+<body>
+    <h1>Add Player</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.id.label_tag }} {{ form.id }}<br><br>
+        {{ form.name.label_tag }} {{ form.name }}<br><br>
+        {{ form.date_joined.label_tag }} <small>(format: yy-mm-dd or dd/mm/yy)</small> {{ form.date_joined }}<br><br>
+        {{ form.position.label_tag }} {{ form.position }}<br><br>
+        {{ form.salary.label_tag }} {{ form.salary }}<br><br>
+        {{ form.contact_person.label_tag }} {{ form.contact_person }}<br><br>
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'player_list' %}">Back</a>
+</body>
+</html>
